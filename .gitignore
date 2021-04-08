@@ -1,2 +1,4 @@
 Data/*/*.csv
 Plots/*
+*.csv
+*.txt

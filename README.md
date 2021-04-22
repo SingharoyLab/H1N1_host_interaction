@@ -35,11 +35,10 @@ Performance of the optimized model was then evaluated in terms of a confusion ma
 
 ## Learning the "rules of binding"
 
-Comparison between avian and human receptors was performed by comparing results of "self-model" and "cross-model" on H1N1 MDCK virus data, wherein "self-model" is the model trained on H1N1 MDCK virus data, and "cross-model" is the model trained on H1N1 EGG data. The flowchart for this analysis is shown below
+Comparison between avian and human receptors was performed by comparing results of "self-model" and "cross-model" on H1N1 MDCK virus data, wherein "self-model" is the model trained on H1N1 MDCK virus data, and "cross-model" is the model trained on H1N1 EGG data. The script 08_compare_self_and_cross.ipynb performs this task. Comments are provided within the script to describe the steps of this analysis. The flowchart for this analysis is shown below
 
 <p align="center">
     <img src="https://github.com/SingharoyLab/H1N1_host_interaction/blob/master/Flowchart.jpeg" width="668" height="501">
 </p>
 
-The script 08_compare_self_and_cross.ipynb performs this task. Comments are provided within the script to describe the steps of this analysis.
  

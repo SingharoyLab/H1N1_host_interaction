@@ -14,7 +14,6 @@ In this work, we show how Influenza A Viruses (IAVs) evolve to infect human host
 
 All scripts are written in python3, using jupyter notebook. The scripts will run with any standard jupyter notebook implementation with python3. For information on jupyter notebook, 
 see 
-
 https://jupyter.org/
 
 We recommend installing jupyter notebook through the anaconda platform

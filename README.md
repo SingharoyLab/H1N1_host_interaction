@@ -21,11 +21,13 @@ https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/jupyter/
 
 ## Selecting the cutoff
 
-The target column in the raw data ("Mean Viral Fluorescence") is a continuous data that reports the intensity of viral binding fluorescence. For our purpose, this data needs to be converted into categorical ("binder"/"non-binder") format. To do this, we make use of the fact that the virus is a non-binder to lactose. By looking at the fluorescence intensity distributions from the three glycan types (2,3-SiaLac, 2-6-SiaLac, and Lactose), we identify the cutoff to be the lowest normalized mean viral fluorescence for which the lactose fluorescence intensity is ~0. The scripts 01_selecting_cutoff_egg.ipynb and 02_selecting_cutoff_mdck.ipynb do this for the H1N1 EGG (avian) and H1N1 MDCK (human) virus data sets, respectively.
+Data reading is done by the _read.py script in the glycan class. The target column in the raw data ("Mean Viral Fluorescence") is a continuous data that reports the intensity of viral binding fluorescence. For our purpose, this data needs to be converted into categorical ("binder"/"non-binder") format. To do this, we make use of the fact that the virus is a non-binder to lactose. By looking at the fluorescence intensity distributions from the three glycan types (2,3-SiaLac, 2-6-SiaLac, and Lactose), we identify the cutoff to be the lowest normalized mean viral fluorescence for which the lactose fluorescence intensity is ~0. The scripts 01_selecting_cutoff_egg.ipynb and 02_selecting_cutoff_mdck.ipynb do this for the H1N1 EGG (avian) and H1N1 MDCK (human) virus data sets, respectively.
     
-## Optimizing SVM learning
+## Data preparation and optimizing SVM learning
 
-TBD
+Next, we prepare the data for SVM learning. For this, we first scale every numerical, continuous variable to a range of [0,1] to avoid bias from higher values. Categorical features like glycan typue was transformed to numeric by mapping to a 2D space where each glycan type was represented either by (1,0) or (0,1). Scripts to do this are included in the glycan class (_prepare.py). This data set was then split into a training set and a test set. Testing set contained 33% of the data, which can be controlled by the "test_size" parameter of the getTrainTest function of the glycan class. 
+
+Number of iterations of SVM learning was incrementally varied, and model performance was evaluated with accuracy, precision, recall, and F-1 score. The scripts 03_egg_convergence.ipynb and 04_MDCK_convergence.ipynb do this for the H1N1 EGG and H1N1 MDCK virus data sets, respectively
 
 ## Evaluating model performance
 

@@ -33,11 +33,13 @@ Number of iterations of SVM learning was incrementally varied, and model perform
 
 Performance of the optimized model was then evaluated in terms of a confusion matrix, where the diagonal elements show the numbers of correct predictions (true positives and true negatives respectively), and the off-diagonal elements show the the numbers of incorrect predictions (false positives and false negatives respectively). 06_SVM_egg.ipynb and 07_SVM_mdck.ipynb does this for the H1N1 EGG and H1N1 MDCK virus data sets, respectively.
 
-## Comparing self-model and cross-model results.
+## Learning the "rules of binding"
+
+Comparison between avian and human receptors was performed by comparing results of "self-model" and "cross-model" on H1N1 MDCK virus data, wherein "self-model" is the model trained on H1N1 MDCK virus data, and "cross-model" is the model trained on H1N1 EGG data. The flowchart for this analysis is shown below
 
 <p align="center">
     <img src="https://github.com/SingharoyLab/H1N1_host_interaction/blob/master/Flowchart.jpeg" width="668" height="501">
 </p>
 
-TBD
+The script 08_compare_self_and_cross.ipynb performs this task. Comments are provided within the script to describe the steps of this analysis.
  

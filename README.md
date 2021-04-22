@@ -6,7 +6,9 @@ Preprint available at: https://www.biorxiv.org/content/10.1101/2021.04.17.440161
 
 In this work, we show how Influenza A Viruses (IAVs) evolve to infect human hosts. IAVs gain access to host cells by recognizing the presentation of glycan receptors on the cellular glycocalyx surfaces. Using synthetic mimetics of glycoproteins that model the glyocalyx receptor presentation, we created data sets for viral binding fluorescence intensities for avian as well as human receptors. Similarities and differences between the binding preferences in these two data sets, which is impossible to conclude using chemical intuition, was revealed by Support Vector Machine (SVM)-based machine learning algorithm. The workflow for this pipeline is shown below
 
-<img align="center" src="https://github.com/SingharoyLab/H1N1_host_interaction/blob/master/Workflow.jpeg" width="500" height="500">
+<p align="center">
+    <img src="https://github.com/SingharoyLab/H1N1_host_interaction/blob/master/Workflow.jpeg" width="500" height="500">
+</p>
 
 ## Pre-requisites
 

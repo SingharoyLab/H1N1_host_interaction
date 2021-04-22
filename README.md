@@ -27,11 +27,11 @@ Data reading is done by the _read.py script in the glycan class. The target colu
 
 Next, we prepare the data for SVM learning. For this, we first scale every numerical, continuous variable to a range of [0,1] to avoid bias from higher values. Categorical features like glycan typue was transformed to numeric by mapping to a 2D space where each glycan type was represented either by (1,0) or (0,1). Scripts to do this are included in the glycan class (_prepare.py). This data set was then split into a training set and a test set. Testing set contained 33% of the data, which can be controlled by the "test_size" parameter of the getTrainTest function of the glycan class. 
 
-Number of iterations of SVM learning was incrementally varied, and model performance was evaluated with accuracy, precision, recall, and F-1 score. The scripts 03_egg_convergence.ipynb and 04_MDCK_convergence.ipynb do this for the H1N1 EGG and H1N1 MDCK virus data sets, respectively
+Number of iterations of SVM learning was incrementally varied, and model performance was evaluated with accuracy, precision, recall, and F-1 score. The scripts 03_egg_convergence.ipynb and 04_MDCK_convergence.ipynb do this for the H1N1 EGG and H1N1 MDCK virus data sets, respectively. 05_plot_performance.ipynb creates the plot for these performance evaluations, that has been used in the supporting information of the paper (Fig. S17).
 
 ## Evaluating model performance
 
-TBD
+Performance of the optimized model was then evaluated in terms of a confusion matrix, where the diagonal elements show the numbers of correct predictions (true positives and true negatives respectively), and the off-diagonal elements show the the numbers of incorrect predictions (false positives and false negatives respectively). 06_SVM_egg.ipynb and 07_SVM_mdck.ipynb does this for the H1N1 EGG and H1N1 MDCK virus data sets, respectively.
 
 ## TBD
 

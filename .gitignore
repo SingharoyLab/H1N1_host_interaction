@@ -1,3 +1,5 @@
+old/
+Results/*
 Data/*/*.csv
 Plots/*
 *.csv

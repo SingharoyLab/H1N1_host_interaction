@@ -89,6 +89,8 @@ def getTrainTestExp(SVMdata, expnum, dropDP=False, test_size=0.33):
         return X_train, X_test, Y_train, Y_test
 
 def getTrainTest(self, numberedExcel, cutoff=0.2, dropDP=False, test_size=0.33):
+    # This is what we originally did
+
     normalized = normalize(numberedExcel)
     SVMdata = convertGlyc(normalized)
     bindData = getBind(SVMdata, cutoff=cutoff)
@@ -115,3 +117,23 @@ def getTrainTest(self, numberedExcel, cutoff=0.2, dropDP=False, test_size=0.33):
         return XX, YY, bindData
     else:
         return X_train, Y_train, X_test, Y_test, bindData 
+
+def getTrainTestRandom(self, numberedExcel, cutoff=0.2, dropDP=False, test_size=0.33):
+    # This is what the reviewers asked
+
+    normalized = normalize(numberedExcel)
+    SVMdata = convertGlyc(normalized)
+    bindData = getBind(SVMdata, cutoff=cutoff)
+    mmList = scale_features(bindData)
+    mmList.index = mmList.Feature
+    minMaxList = mmList.drop(['Feature'], axis=1)
+
+    X = bindData[['PrintPol', 'DP', '2-3 SiaLac', '2-6 SiaLac', 'Valency', 'GlycSpace', 'GlycDen']]
+    Y = bindData['Binding']
+
+    if test_size == 0.0:
+        return X, Y, bindData
+
+    else:
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=test_size, random_state=42)
+        return X_train, Y_train, X_test, Y_test, bindData

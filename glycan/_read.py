@@ -105,7 +105,7 @@ def readFile(fileName, wh='new', tab=0):
         t = processRest_old(l, tab=tab)
     return t
 
-def number_experiments(excel, startExp = 1 ):
+def number_experiments(excel, startExp=1):
     exp_size = 6
     data_size = excel.shape[0]
     numbers = np.zeros(data_size)
@@ -122,7 +122,7 @@ def number_experiments(excel, startExp = 1 ):
     excel = excel[~(excel[excel.columns.values[4:9]] == -9999.000).any(axis=1)]
     return excel, i-1     
 
-def getData(self, fileName, wh='new', totalTabs=0):
+def getData(self, fileName, wh='new', totalTabs=0, startExp=1):
     if wh == 'new':
         excel1 = readFile(fileName, wh=wh, tab=0)
         excel1['SubArr'] = self.subArr
@@ -157,7 +157,7 @@ def getData(self, fileName, wh='new', totalTabs=0):
         #excel3['SubArr'] = self.subArr
         #self.subArr += 1
         #excel = pd.concat([excel1, excel2, excel3], axis=0)
-    numberedExcel, b = number_experiments(excel)
+    numberedExcel, b = number_experiments(excel, startExp=startExp)
     #numberedExcel2 = numberedExcel[numberedExcel.MVF > -1000]
     numberedExcel['FileName'] = fileName
-    return numberedExcel
+    return numberedExcel, b

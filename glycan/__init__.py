@@ -3,6 +3,6 @@ class glycan(object):
         self.subArr = 0
 
     from ._read import getData
-    from ._prepare import getTrainTest
+    from ._prepare import getTrainTest, getTrainTestRandom
     from ._dataPlot import plotConfusion, plotReport
     from ._write import saveSubsets

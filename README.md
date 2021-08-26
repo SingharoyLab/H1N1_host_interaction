@@ -27,7 +27,7 @@ Data reading is done by the _read.py script in the glycan class. The target colu
 
 Next, we prepare the data for SVM learning. For this, we first scale every numerical, continuous variable to a range of [0,1] to avoid bias from higher values. Categorical features like glycan type was transformed to numeric by mapping to a 2D space where each glycan type was represented either by (1,0) or (0,1) (this is known as 'onehot coding'). Scripts to do this are included in the glycan class (_prepare.py). This data set was then split into a training set and a test set. Testing set contained 33% of the data, which can be controlled by the "test_size" parameter of the getTrainTest function of the glycan class. 
 
-Number of iterations of SVM learning was incrementally varied, and model performance was evaluated with accuracy, precision, recall, and F-1 score. The scripts 2a_egg_convergence.ipynb, 2b_H3N2_convergence, and 2c_MDCK_convergence.ipynb do this for the H1N1 EGG, H3N2 MDCK, and H1N1 MDCK virus data sets, respectively. 
+Number of iterations of SVM learning was incrementally varied, and model performance was evaluated with accuracy, precision, recall, and F-1 score. The scripts 2a_egg_convergence.ipynb, 2b_H3N2_convergence.ipynb, and 2c_MDCK_convergence.ipynb do this for the H1N1 EGG, H3N2 MDCK, and H1N1 MDCK virus data sets, respectively. 
 
 ## Evaluating model performance
 

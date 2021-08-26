@@ -45,9 +45,9 @@ def read_H3N2_data():
 
     # The "wh" parameter simply controls the format of the CSV file.
     # The 'old' format is slightly different from the 'new' format, but has the same information
-    numberedExcel1, b = g.getData('Data/H3N2_EGG/H3N2_sheet1.csv', totalTabs=2, startExp=1)
-    numberedExcel2, b = g.getData('Data/H3N2_EGG/H3N2_sheet2.csv', totalTabs=2, startExp=(b+1))
-    numberedExcel3, b = g.getData('Data/H3N2_EGG/H3N2_sheet3.csv', totalTabs=2, startExp=(b+1))
+    numberedExcel1, b = g.getData('Data/H3N2_MDCK/H3N2_sheet1.csv', totalTabs=2, startExp=1)
+    numberedExcel2, b = g.getData('Data/H3N2_MDCK/H3N2_sheet2.csv', totalTabs=2, startExp=(b+1))
+    numberedExcel3, b = g.getData('Data/H3N2_MDCK/H3N2_sheet3.csv', totalTabs=2, startExp=(b+1))
 
     # Now combine all the data frames
     h3n2 = pd.concat([numberedExcel1, numberedExcel2, numberedExcel3], axis=0)
